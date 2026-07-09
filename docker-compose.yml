@@ -1,0 +1,15 @@
+services:
+  supportflow-db:
+    image: postgres:16
+    container_name: supportflow-db
+    environment:
+      POSTGRES_DB: supportflow
+      POSTGRES_USER: supportflow_user
+      POSTGRES_PASSWORD: supportflow_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - supportflow-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  supportflow-postgres-data:
